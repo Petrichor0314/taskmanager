@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { SilkBackground } from '@/components/ui/silk-background-animation'
 import {
   FolderKanban,
   CheckCircle2,
@@ -72,37 +73,39 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container py-24 md:py-32">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5">
-            <Sparkles className="mr-2 h-3.5 w-3.5" />
-            Simple. Powerful. Free.
-          </Badge>
-          <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Manage Your Tasks{' '}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Effortlessly
-            </span>
-          </h1>
-          <p className="mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Stay organized, boost productivity, and achieve your goals with our intuitive 
-            task management platform. Perfect for individuals and teams.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link to="/register">
-              <Button size="lg" className="gap-2 text-base">
-                Start For Free
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-            <Link to="/login">
-              <Button size="lg" variant="outline" className="text-base">
-                Sign In
-              </Button>
-            </Link>
+      <SilkBackground className="min-h-[90vh] flex items-center">
+        <div className="container relative z-30 py-24 md:py-32">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+            <Badge variant="outline" className="mb-4 px-4 py-1.5 border-white/20 text-white bg-white/5 backdrop-blur-sm">
+              <Sparkles className="mr-2 h-3.5 w-3.5" />
+              Simple. Powerful. Free.
+            </Badge>
+            <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-lg">
+              Manage Your Tasks{' '}
+              <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                Effortlessly
+              </span>
+            </h1>
+            <p className="mb-8 max-w-2xl text-lg text-gray-300 md:text-xl drop-shadow-md">
+              Stay organized, boost productivity, and achieve your goals with our intuitive 
+              task management platform. Perfect for individuals and teams.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link to="/register">
+                <Button size="lg" className="gap-2 text-base bg-white text-black hover:bg-gray-200 border-none">
+                  Start For Free
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button size="lg" variant="outline" className="text-base border-white/30 text-white bg-transparent hover:bg-white/10 hover:text-white">
+                  Sign In
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
+      </SilkBackground>
 
       {/* Features Section */}
       <section className="container py-24">
