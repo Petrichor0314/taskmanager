@@ -51,6 +51,14 @@ A full-stack project task management application built for Hahn Software Morocco
 - ✅ Visual progress bar with percentage
 - ✅ Real-time progress updates
 
+### UI/UX Improvements
+- ✅ Modern Landing Page
+- ✅ Collapsible Sidebar Navigation
+- ✅ Global Search (Cmd+K)
+- ✅ Responsive Design
+- ✅ Dark Mode Support (System default)
+- ✅ Beautiful shadcn/ui components
+
 ### Bonus Features
 - ✅ Docker Compose setup for easy deployment
 - ✅ Clean architecture with separation of concerns
@@ -58,6 +66,7 @@ A full-stack project task management application built for Hahn Software Morocco
 - ✅ Comprehensive error handling
 - ✅ Pagination support (API ready)
 - ✅ Search/filter functionality (API ready)
+- ✅ Environment variable configuration
 
 ## 🚀 Getting Started
 
@@ -67,14 +76,30 @@ A full-stack project task management application built for Hahn Software Morocco
 - PostgreSQL 15 or higher (or Docker)
 - Maven 3.9+
 
+### Configuration
+
+Before running the application, you need to set up the environment variables.
+
+1. **Backend**: Copy `backend/.env.example` to `backend/.env` and update the values if necessary.
+   ```bash
+   cp backend/.env.example backend/.env
+   ```
+
+2. **Frontend**: Copy `frontend/.env.example` to `frontend/.env` and update the values if necessary.
+   ```bash
+   cp frontend/.env.example frontend/.env
+   ```
+
 ### Option 1: Running with Docker (Recommended)
 
 The easiest way to run the entire application stack:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd hahn
+git clone https://github.com/Petrichor0314/taskmanager.git
+cd taskmanager
+
+# Ensure .env files are created as described above
 
 # Start all services with Docker Compose
 docker-compose up --build
@@ -96,14 +121,7 @@ Access the application at: http://localhost:5173
 CREATE DATABASE taskmanager;
 ```
 
-2. Update database credentials in `backend/src/main/resources/application.yml` if needed:
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/taskmanager
-    username: postgres
-    password: postgres
-```
+2. Ensure `backend/.env` is configured correctly for your local database.
 
 #### Backend Setup
 
@@ -209,12 +227,9 @@ hahn/
 
 ## 🎥 Demo Video
 
-[Link to Demo Video] - *Add your demo video link here*
 
 ## 📄 License
 
 This project is created for Hahn Software Morocco End of Studies Internship evaluation.
 
 ---
-
-Built with ❤️ for Hahn Software Morocco
