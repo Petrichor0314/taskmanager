@@ -11,6 +11,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { useToast } from '@/components/ui/use-toast'
 import { FolderKanban, Loader2, ArrowLeft } from 'lucide-react'
 import { AxiosError } from 'axios'
+import { SilkBackground } from '@/components/ui/silk-background-animation'
 
 const registerSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -64,30 +65,30 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <SilkBackground className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur">
+      <nav className="border-b border-white/10 bg-transparent z-50">
         <div className="container flex h-16 items-center">
-          <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" />
             <span>Back to home</span>
           </Link>
         </div>
       </nav>
 
-      <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/30 p-4">
+      <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md space-y-8">
           <div className="flex flex-col items-center text-center">
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary mb-4">
-              <FolderKanban className="h-7 w-7 text-primary-foreground" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm mb-4 border border-white/20">
+              <FolderKanban className="h-7 w-7 text-white" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight">Create an account</h1>
-            <p className="text-muted-foreground mt-2">
+            <h1 className="text-2xl font-bold tracking-tight text-white">Create an account</h1>
+            <p className="text-gray-300 mt-2">
               Get started with your free account
             </p>
           </div>
 
-          <Card className="border-muted/50">
+          <Card className="border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
             <form onSubmit={handleSubmit(onSubmit)}>
               <CardContent className="space-y-4 pt-6">
                 <div className="space-y-2">
@@ -163,6 +164,6 @@ export default function RegisterPage() {
           </Card>
         </div>
       </div>
-    </div>
+    </SilkBackground>
   )
 }
